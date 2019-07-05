@@ -1,0 +1,227 @@
+.mainHeader {
+    height: 100px;
+    display: flex;
+}
+
+.logoimg {
+    margin: 10px 0px 15px 100px;
+    height: 80px;
+}
+
+.listDiv {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.list {
+    list-style-type: none;
+    margin-left: 120px;
+}
+
+.list-Item,
+.fa,
+.fa-search {
+    margin: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(3, 3, 124);
+    margin-left: 20px;
+    float: left;
+
+}
+
+.search {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fa,
+.fa-search {
+    color: white;
+    background-color: black;
+}
+
+i {
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.mainimg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.img2 {
+    width: 100%;
+}
+
+.mainFooter {
+    background-image: url("../images/footer.PNG");
+    height: 300px;
+}
+
+.footerList {
+    font-weight: bold;
+    list-style-type: none;
+}
+
+.social {
+    padding: 12px;
+    margin-left: 160px;
+}
+
+.listItem {
+    color: white;
+    margin: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+    float: left;
+}
+
+.touch,
+.contact {
+    text-align: center;
+    font-size: 28px;
+    margin: 130px 30px 75px 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.contact {
+    background-color: rgb(2, 2, 82);
+    border-color: rgb(2, 2, 82);
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    width: 300px;
+    height: 50px;
+}
+
+.fa-twitter,
+.fa-globe,
+.fa-linkedin-in,
+.fa-facebook-f {
+    /* float: right; */
+    color: white;
+    width: 50px;
+}
+
+.blue-part {
+    display: flex;
+}
+
+.center {
+    margin-left: 450px;
+    display: flex;
+    text-align: center;
+}
+
+.mainDiv,
+body {
+    background-image: url("../images/bkbk.PNG");
+}
+
+.content {
+    height: fit-content;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.fifth,
+.sixth,
+.seventh,
+.eighth {
+    display: flex;
+    margin: 100px 0px 0px 0px;
+}
+
+.properties_table {
+    margin: 100px 0px 0px 0px;
+}
+
+.main {
+    display: flex;
+}
+
+.titles {
+    font-weight: bold;
+    color: rgb(14, 14, 163);
+    font-size: 22px;
+    margin: 20px 20px 20px 20px;
+}
+
+.properties {
+    border: 1px solid rgb(142, 145, 145);
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.rows {
+    padding: 15px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgb(142, 145, 145);
+}
+
+td {
+    border: 1px solid rgb(142, 145, 145);
+    text-align: center;
+    color: rgb(109, 109, 109);
+    font-size: 18px;
+    font-weight: 550;
+    background-color: white;
+
+}
+
+.one {
+    width: 550px;
+    font-size: 18px;
+    font-weight: 550;
+    color: rgb(109, 109, 109);
+    margin-left: 200px;
+}
+
+ul.dashed {
+    list-style-type: none;
+
+}
+
+ul.dashed>li:before {
+    content: "-";
+}
+
+.image {
+    height: 400px;
+    width: 400px;
+}
+
+.pic {
+    margin-left: 100px;
+}
+
+.boldy {
+    font-weight: bold;
+}
+
+.logo {
+    padding-top: 13px;
+}
+
+.titles-border {
+    font-weight: bold;
+    color: rgb(14, 14, 163);
+    font-size: 22px;
+    margin: 20px 20px 20px 20px;
+    border-bottom: 3px solid orange;
+    width: 30%;
+}
+
+p {
+    text-align: justify;
+}
