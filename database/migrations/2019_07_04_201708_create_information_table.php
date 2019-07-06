@@ -15,9 +15,9 @@ class CreateInformationTable extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('prod_profile');
-            $table->text('prod_benefits');
-            $table->text('prod_applications');
+            $table->text('prod_profile')->nullable();
+            $table->text('prod_benefits')->nullable();
+            $table->text('prod_applications')->nullable();
             $table->bigInteger('product_id')->unsigned()->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();

@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<h1 style="text-align:center; color:brown; font-size:28px; font-weight:bold;">New Information</h1>
+<h1 style="text-align:center; color:brown; font-size:28px; font-weight:bold;">Edit Information</h1>
 @stop
 
 @section('content')
@@ -26,10 +26,10 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">Product Profile</label>
+            <label class="col-md-4 control-label" for="prod_profile">Product Profile</label>
             <div class="col-md-4">
-                <textarea id="product_name" name="product_name" class="form-control input-md" 
-                required="" type="text" value="{{$information->prod_profile}}"></textarea>
+                <input id="product_name" name="prod_profile" value="{{$information->prod_profile}}"
+                    class="form-control input-md" required="" type="text" ></textarea>
                 <small>Please Start Every Point with a ($).</small>
 
             </div>
@@ -37,9 +37,9 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">Product Benefits</label>
+            <label class="col-md-4 control-label" for="prod_benefits">Product Benefits</label>
             <div class="col-md-4">
-                <textarea id="product_name" name="product_name"  value="{{$information->prod_benefits}}"
+                <input id="product_name" name="prod_benefits" value="{{$information->prod_benefits}}"
                     class="form-control input-md" required="" type="text"></textarea>
                 <small>Please Start Every Point with a ($).</small>
 
@@ -47,9 +47,9 @@
         </div>
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">Product Applications</label>
+            <label class="col-md-4 control-label" for="prod_applications">Product Applications</label>
             <div class="col-md-4">
-                <textarea id="product_name" name="product_name"  value="{{$information->prod_applications}}"
+                <input id="product_name" name="prod_applications" value="{{$information->prod_applications}}"
                     class="form-control input-md" required="" type="text"></textarea>
                 <small>Please Start Every Point with a ($).</small>
 
@@ -63,7 +63,7 @@
                 <select id="product_id" name="product_id" class="form-control">
 
                     @foreach ($products as $product)
-                    <option value="{{$product->id}}">{{$product->product_name}}</option>
+                <option value="{{$product->id}}" selected="{{$product->id}}">{{$product->product_name}}</option>
                     @endforeach
 
                 </select>

@@ -70,7 +70,6 @@ class ProductsController extends Controller
             'product_name' => 'required',
             'special' => 'required'
         ]);
-
         Product::create($request->all());
         return redirect()->route('products.index');
     }
