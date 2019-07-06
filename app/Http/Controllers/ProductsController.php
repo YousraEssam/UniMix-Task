@@ -16,22 +16,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        // $products = Product::with('photos')->get();
-        
-        // $specials = Product::get_special_products();
-        
-        // $profile_arr = Information::get_profiles();
-        // $benefits_arr = Information::get_benefits();
-        // $app_arr = Information::get_applications();
+        $products = Product::all();
 
-        // return view('products.allproducts',[
-        //     'products' => $products,
-        //     'specials' => $specials,
-        //     'profile_arr' => $profile_arr,
-        //     'benefits_arr' => $benefits_arr,
-        //     'app_arr' => $app_arr,
-
-        // ]);
+        return view('products.index',[
+            'products' => $products,
+        ]);
     }
 
     public function show_all_products()
