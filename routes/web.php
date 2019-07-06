@@ -23,4 +23,6 @@ Route::resource('information','InformationController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home');
+
+Route::get('/allproducts', 'ProductsController@show_all_products');

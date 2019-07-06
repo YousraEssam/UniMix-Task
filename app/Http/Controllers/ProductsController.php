@@ -16,6 +16,26 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        // $products = Product::with('photos')->get();
+        
+        // $specials = Product::get_special_products();
+        
+        // $profile_arr = Information::get_profiles();
+        // $benefits_arr = Information::get_benefits();
+        // $app_arr = Information::get_applications();
+
+        // return view('products.allproducts',[
+        //     'products' => $products,
+        //     'specials' => $specials,
+        //     'profile_arr' => $profile_arr,
+        //     'benefits_arr' => $benefits_arr,
+        //     'app_arr' => $app_arr,
+
+        // ]);
+    }
+
+    public function show_all_products()
+    {
         $products = Product::with('photos')->get();
         
         $specials = Product::get_special_products();
@@ -24,7 +44,7 @@ class ProductsController extends Controller
         $benefits_arr = Information::get_benefits();
         $app_arr = Information::get_applications();
 
-        return view('products.index',[
+        return view('products.allproducts',[
             'products' => $products,
             'specials' => $specials,
             'profile_arr' => $profile_arr,
@@ -32,18 +52,6 @@ class ProductsController extends Controller
             'app_arr' => $app_arr,
 
         ]);
-    }
-
-    public function show_all_products()
-    {
-        $products = Product::all();
-        // dd($products);
-
-        // return view('home',[
-        //     'products'=> $products,
-        // ]);
-        // return view('products.allproducts');
-        return 'hello';
     }
     
     /**
