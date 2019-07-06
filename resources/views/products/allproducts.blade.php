@@ -5,34 +5,34 @@
 </div>
 
 <!-- CAROUSEL NOT WORKING RIGHT -->
-<div class="carousel-caption">
-            <div class="carousel-inner">
-                <h3> Products & Service </h3>
-                <div class="carousel-item active">
-                    <p> Special Products </p>
-                    <p> Mortar Ready to use </p>
-                    <p> Self-Compacting Concrete </p>
-                    <p> Early Strength Concrete </p>
-                </div>
-
-                <div class="carousel-item">
-                    <p> Steel Fibers Concrete </p>
-                    <p> Polyproplene Fiber Concrete </p>
-                    <p> Colored Concrete </p>
-                    <p> Heavy Weight Concrete </p>
-                    <p> Reactive Powder Concrete </p>
-
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+{{-- <div class="carousel-caption">
+    <div class="carousel-inner">
+        <h3> Products & Service </h3>
+        <div class="carousel-item active">
+            <p> Special Products </p>
+            <p> Mortar Ready to use </p>
+            <p> Self-Compacting Concrete </p>
+            <p> Early Strength Concrete </p>
         </div>
+
+        <div class="carousel-item">
+            <p> Steel Fibers Concrete </p>
+            <p> Polyproplene Fiber Concrete </p>
+            <p> Colored Concrete </p>
+            <p> Heavy Weight Concrete </p>
+            <p> Reactive Powder Concrete </p>
+
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div> --}}
 
 
 
