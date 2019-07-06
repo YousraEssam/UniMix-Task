@@ -16,10 +16,6 @@
 6- Load seeder:
 	composer dump-autoload
 	php artisan migrate:fresh --seed
-	
-	There exist a User Seed for testing
-		username: admin@admin.com
-		password: password
 
 7- Generate appkey for the project:
 	php artisan key:generate
@@ -30,15 +26,21 @@
 ============================================================
 Routes:
 	to view the website: 
+
 		Home Page: localhost:8000/
 		Products Page: localhost:8000/allproducts
-	also you can switch between home and products using icons in the Header.
+
+	Also you can switch between home and products using icons in the Header.
 
 	to open the admin panel:
 		localhost:8000/register
-			then you will be redirected to the admin panel
+
+	There exist a User Seed for testing
+		username: admin@admin.com
+		password: password
+
+	You will be redirected to the admin panel
 		also to access while logged in --> localhost:8000/login 
-
+	
 	also all routes can be viewed by: php artisan route:list
-
 
