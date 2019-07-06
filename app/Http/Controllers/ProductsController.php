@@ -28,7 +28,7 @@ class ProductsController extends Controller
     public function show_all_products()
     {
         $products = Product::with('photos')->get();
-        
+
         $specials = Product::get_special_products();
         
         $profile_arr = Information::get_profiles();
@@ -41,7 +41,6 @@ class ProductsController extends Controller
             'profile_arr' => $profile_arr,
             'benefits_arr' => $benefits_arr,
             'app_arr' => $app_arr,
-
         ]);
     }
     
