@@ -18,7 +18,7 @@
 @endif
 <a href="{{route('photos.index')}}" class="btn btn-danger">Back</a>
 
-<form class="form-horizontal" action="{{route('photos.store')}}" method="POST">
+<form class="form-horizontal" action="{{route('photos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
     <fieldset>
@@ -35,7 +35,7 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="photo_name">Is Logo?</label>
+            <label class="col-md-4 control-label" for="logo">Is Logo?</label>
             <div class="col-md-4">
                 <input id="logo" name="logo" placeholder="Is it a logo?" class="form-control input-md" required=""
                     type="text">
@@ -61,7 +61,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="filebutton">Upload Photo</label>
             <div class="col-md-4">
-                <input id="filebutton" name="filebutton" class="input-file" type="file">
+                <input id="filebutton" name="photo_name" class="input-file" type="file">
             </div>
         </div>
 

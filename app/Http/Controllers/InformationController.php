@@ -74,12 +74,13 @@ class InformationController extends Controller
     public function show($id)
     {
         $information = Information::find($id);
+
         $prod_profiles = Information::get_profiles();
-        // dd($prod_profiles);
         $prod_benefits = Information::get_benefits();
         $prod_applications = Information::get_applications();
-
+        
         $product = Product::find($information->product_id);
+
         return view('information.show',[
             'information' => $information,
             'product' => $product,  

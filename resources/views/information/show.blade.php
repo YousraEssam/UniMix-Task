@@ -13,7 +13,7 @@
 <a href="{{route('information.index')}}" class="btn btn-danger">Back</a>
 @csrf
 
-<form class="form-horizontal" action="{{route('information.store')}}" method="POST">
+<form class="form-horizontal" action="{{route('information.store')}}" method="POST" enctype="multipart/form-data">
     <fieldset>
         <div class="form-group">
             <label class="col-md-4 control-label" for="prod_profile">Product Profile</label>

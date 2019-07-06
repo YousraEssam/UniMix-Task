@@ -20,10 +20,9 @@
             </thead>
             <tbody>
                 @foreach ($photos as $photo)
-                    
                 <tr>
                     <th scope="row">{{ $photo->id }}</th>
-                    <td>{{ $photo->photo_name }}</td>
+                    <td><img src="{{asset('images/'.$photo->photo_name)}}"  style="height:80px; width:80px;"></td>
                     <td>{{ $photo->logo }}</td>
                     <td>{{ $photo->product->product_name }}</td>
                     <td>

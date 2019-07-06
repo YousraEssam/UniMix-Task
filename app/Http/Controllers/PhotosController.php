@@ -28,6 +28,7 @@ class PhotosController extends Controller
      */
     public function create()
     {
+
         $photos = Photo::all();
         $products = Product::all();
         
@@ -45,7 +46,21 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        Photo::create($request->all());
+        if ($request->hasFile('photo_name')) {
+            $imageName = $request->file('photo_name');
+
+            $file_original_name = $imageName->getClientOriginalName();
+
+            $filename = pathinfo($file_original_name, PATHINFO_FILENAME) . "." . pathinfo($file_original_name, PATHINFO_EXTENSION);
+
+            $request->photo_name->move(public_path('images'), $file_original_name);
+        }
+        Photo::create([
+            'photo_name' => $filename,
+            'logo' => $request->logo,
+            'product_id' => $request->product_id,
+        ]);
+
         return redirect()->route('photos.index');
     }
 
@@ -57,7 +72,13 @@ class PhotosController extends Controller
      */
     public function show($id)
     {
-        //
+        $photo = Photo::find($id);
+        $product = Product::find($photo->product_id);
+
+        return view('photos.show',[
+            'photo' => $photo,
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -68,7 +89,13 @@ class PhotosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $photo = Photo::where('id',$id)->first();
+        $products = Product::all(); 
+
+        return view('photos.edit',[
+            'photo' => $photo,
+            'products' => $products,
+        ]);
     }
 
     /**
@@ -80,7 +107,22 @@ class PhotosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->hasFile('photo_name')) {
+            $imageName = $request->file('photo_name');
+
+            $file_original_name = $imageName->getClientOriginalName();
+
+            $filename = pathinfo($file_original_name, PATHINFO_FILENAME) . "." . pathinfo($file_original_name, PATHINFO_EXTENSION);
+            $request->photo_name->move(public_path('images'), $file_original_name);
+        }
+        $photo = Photo::find($id);
+        $photo->update([
+            'photo_name' => $filename,
+            'logo' => $request->logo,
+            'product_id' => $request->product_id,
+        ]);
+
+        return redirect()->route('photos.index');
     }
 
     /**
@@ -91,6 +133,11 @@ class PhotosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $photo = Photo::find($id);
+
+        $photo->delete();
+
+        return redirect()->route('photos.index');
+    
     }
 }

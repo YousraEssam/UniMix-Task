@@ -18,7 +18,7 @@
 @endif
 <a href="{{route('information.index')}}" class="btn btn-danger">Back</a>
 
-<form class="form-horizontal" action="{{route('information.update',[$information->id])}}" method="POST">
+<form class="form-horizontal" action="{{route('information.update',[$information->id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         {{ method_field('PUT') }}
         

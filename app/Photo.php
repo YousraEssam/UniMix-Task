@@ -8,6 +8,8 @@ class Photo extends Model
 {
     protected $fillable = [
         'photo_name',
+        'logo',
+        'product_id',
     ];
     
     public $timestamps = false;

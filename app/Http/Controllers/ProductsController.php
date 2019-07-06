@@ -83,10 +83,7 @@ class ProductsController extends Controller
     public function show($id)
     {
         $product = Product::with('photos')->find($id);
-        // for($i=0; $i<count($product->photos); $i++){
-        //     // dd($product->photos[$i]->logo);
-        // }
-        // dd($product->photos);
+        
         return view('products.show',[
             'product' => $product,
         ]);
