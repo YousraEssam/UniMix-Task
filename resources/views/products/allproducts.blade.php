@@ -34,8 +34,6 @@
     </a>
 </div> --}}
 
-
-
 <!-- CONTENT -->
 <div class="content">
     <div class="one main">
@@ -52,7 +50,7 @@
 
     @if(count($products) > 0)
         @for($prod=0; $prod<count($products); $prod++) 
-            @if(count($products[$prod]->photos) > 0 )
+            @if(count($products[$prod]->photos) > 0 && (count($products[$prod]->information) > 0))
                 @if($prod==2) 
                     <div class="properties_table">
                         <p class="titles-border">Conformity Criteria for the Properties</p>
