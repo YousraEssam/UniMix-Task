@@ -45,6 +45,10 @@ Routes:
 	also all routes can be viewed by: php artisan route:list
 
 NOTE: in admin panel
+	STEPS:
+		1- Create Product
+		2- Create Photos and Information.
+		
 	when creating new product -> 'special' field is boolean .. 
 		so it takes 0 if the product is not a Special Product
 				 or 1 if the product is a Special Product		
