@@ -35,12 +35,12 @@ Routes:
 	to open the admin panel:
 		localhost:8000/register
 
+	You will be redirected to the admin panel
+		also to access while logged in --> localhost:8000/login 
+
 	There exist a User Seed for testing
 		username: admin@admin.com
 		password: password
-
-	You will be redirected to the admin panel
-		also to access while logged in --> localhost:8000/login 
 	
 	also all routes can be viewed by: php artisan route:list
 
