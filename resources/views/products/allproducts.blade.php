@@ -5,7 +5,7 @@
 </div>
 
 <!-- CAROUSEL NOT WORKING RIGHT -->
-{{-- <div class="carousel-caption">
+<!-- <div class="carousel-caption">
     <div class="carousel-inner">
         <h3> Products & Service </h3>
         <div class="carousel-item active">
@@ -32,7 +32,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div> --}}
+</div> -->
 
 <!-- CONTENT -->
 <div class="content">
