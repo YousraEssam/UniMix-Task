@@ -16,7 +16,6 @@ class ProductsController extends Controller
      */
     public function index()
     {
-
         $products = Product::with('photos')->get();
         
         $specials = Product::get_special_products();
@@ -25,20 +24,28 @@ class ProductsController extends Controller
         $benefits_arr = Information::get_benefits();
         $app_arr = Information::get_applications();
 
-        // $logo_image = Photo::get_product_logo();
-        // $image = Photo::get_product_image();
-
         return view('products.index',[
             'products' => $products,
             'specials' => $specials,
             'profile_arr' => $profile_arr,
             'benefits_arr' => $benefits_arr,
             'app_arr' => $app_arr,
-            // 'logo_image' => $logo_image,
-            // 'image' => $image,
+
         ]);
     }
 
+    public function show_all_products()
+    {
+        $products = Product::all();
+        // dd($products);
+
+        // return view('home',[
+        //     'products'=> $products,
+        // ]);
+        // return view('products.allproducts');
+        return 'hello';
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -104,4 +111,5 @@ class ProductsController extends Controller
     {
         //
     }
+
 }
