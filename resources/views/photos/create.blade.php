@@ -24,14 +24,14 @@
     <fieldset>
 
         <!-- Text input-->
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label class="col-md-4 control-label" for="photo_name">Photo Name</label>
             <div class="col-md-4">
                 <input id="photo_name" name="photo_name" placeholder="Photo Name" class="form-control input-md"
                     required="" type="text">
 
             </div>
-        </div>
+        </div> -->
 
         <!-- Text input-->
         <div class="form-group">
@@ -39,7 +39,10 @@
             <div class="col-md-4">
                 <input id="logo" name="logo" placeholder="Is it a logo?" class="form-control input-md" required=""
                     type="text">
-
+                    <!-- <select class="custom-select" id="inputGroupSelect01" name="logo">
+                        <option value="{{1}}">Yes</option>
+                        <option value="{{0}}">No</option>
+                    </select> -->
             </div>
         </div>
 

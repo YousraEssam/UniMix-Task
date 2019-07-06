@@ -25,13 +25,13 @@
     <fieldset>
 
         <!-- Text input-->
-        {{-- <div class="form-group">
+        <!-- <div class="form-group">
             <label class="col-md-4 control-label" for="photo_name">Photo</label>
             <div class="col-md-4">
                 <input id="product_name" name="photo_name" value="{{$photo->photo_name}}"
                     class="form-control input-md" required="" type="text" >
             </div>
-        </div> --}}
+        </div> -->
 
         <!-- Text input-->
         <div class="form-group">

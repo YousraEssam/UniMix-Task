@@ -44,3 +44,14 @@ Routes:
 	
 	also all routes can be viewed by: php artisan route:list
 
+NOTE: in admin panel
+	when creating new product -> 'special' field is boolean .. 
+		so it takes 0 if the product is not a Special Product
+				 or 1 if the product is a Special Product		
+
+	when creating new photo -> 'logo' field is boolean .. 
+		so it takes 0 if the image is not a Logo
+				 or 1 if the image is a Logo
+
+	when creating new infomation -> points must be separated by a $ sign.
+		example: Rainbow has 7 colors.$They are Red, Orange, Yellow, Green, Blue, Indigo and Violet.$We owe a great deal of gratitude to Isaac Newton for his pioneering work on what light is and how colors combine to make the rainbow.

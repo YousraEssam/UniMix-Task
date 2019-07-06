@@ -28,7 +28,7 @@
 
                     @if(count($product->photos) > 0)
                         @foreach($product->photos as $photo)
-                            {{-- @if(count($product->photos) == 1)
+                            @if(count($product->photos) == 1)
                                 @if($photo->logo == 0)
                                     <td>
                                         <img src="{{ asset('images/'.$photo->photo_name)}}" 
@@ -42,7 +42,7 @@
                                 @else
                                     <td> NOT Avaliable  </td>                         
                                 @endif
-                            @elseif(count($product->photos) > 1) --}}
+                            @elseif(count($product->photos) > 1)
                                 @if($photo->logo == 0)
                                     <td>
                                         <img src="{{ asset('images/'.$photo->photo_name)}}" 
@@ -54,7 +54,7 @@
                                         style="height:60px; width:60px;">
                                     </td>                        
                                 @endif
-                            {{-- @endif --}}
+                            @endif
                         @endforeach
                                        
                     @elseif(count($product->photos) == 0)

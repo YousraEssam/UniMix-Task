@@ -23,7 +23,13 @@
                 <tr>
                     <th scope="row">{{ $photo->id }}</th>
                     <td><img src="{{asset('images/'.$photo->photo_name)}}"  style="height:80px; width:80px;"></td>
-                    <td>{{ $photo->logo }}</td>
+                    <td>
+                        @if($photo->logo == 0)
+                            <h5> NO </h5>
+                        @elseif($photo->logo == 1)
+                            <h5> YES </h5>
+                        @endif
+                    </td>
                     <td>{{ $photo->product->product_name }}</td>
                     <td>
                         <a href="{{route('photos.show', [$photo->id])}}" class="btn btn-success">View</a>
