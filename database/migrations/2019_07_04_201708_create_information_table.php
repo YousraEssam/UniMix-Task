@@ -19,7 +19,7 @@ class CreateInformationTable extends Migration
             $table->text('prod_benefits');
             $table->text('prod_applications');
             $table->bigInteger('product_id')->unsigned()->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->delete();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

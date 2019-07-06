@@ -13,8 +13,8 @@
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Product Name</th>
-                {{-- <th scope="col">Product Logo</th>
-                <th scope="col">Product Photo</th> --}}
+                <th scope="col">Product Photo</th>
+                <th scope="col">Product Logo</th>
                 <th scope="col">Is Special ?</th>
                 <th scope="col">#</th>
               </tr>
@@ -25,8 +25,44 @@
                 <tr>
                     <th scope="row">{{ $product->id }}</th>
                     <td>{{ $product->product_name }}</td>
-                    {{-- <td></td>
-                    <td></td> --}}
+
+                    @if(count($product->photos) > 0)
+                        @foreach($product->photos as $photo)
+                            {{-- @if(count($product->photos) == 1)
+                                @if($photo->logo == 0)
+                                    <td>
+                                        <img src="{{ asset('images/'.$photo->photo_name)}}" 
+                                        style="height:100px; width:100px;">
+                                    </td>
+                                @elseif($photo->logo == 1)
+                                    <td>
+                                        <img src="{{ asset('images/'.$photo->photo_name)}}" 
+                                        style="height:60px; width:60px;">
+                                    </td> 
+                                @else
+                                    <td> NOT Avaliable  </td>                         
+                                @endif
+                            @elseif(count($product->photos) > 1) --}}
+                                @if($photo->logo == 0)
+                                    <td>
+                                        <img src="{{ asset('images/'.$photo->photo_name)}}" 
+                                        style="height:100px; width:100px;">
+                                    </td>
+                                @elseif($photo->logo == 1)
+                                    <td>
+                                        <img src="{{ asset('images/'.$photo->photo_name)}}" 
+                                        style="height:60px; width:60px;">
+                                    </td>                        
+                                @endif
+                            {{-- @endif --}}
+                        @endforeach
+                                       
+                    @elseif(count($product->photos) == 0)
+                        <td> NO LOGO </td>
+                        <td> NO PHOTO </td>
+                    
+                    @endif
+
                     <td>
                         @if($product->special == 0)
                             <h5> NO </h5>

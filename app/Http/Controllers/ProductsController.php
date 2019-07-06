@@ -16,8 +16,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-
+        $products = Product::with('photos')->get();
+        
+        // dd(count($products[9]->photos));
+        
         return view('products.index',[
             'products' => $products,
         ]);
@@ -64,6 +66,11 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'product_name' => 'required',
+            'special' => 'required'
+        ]);
+
         Product::create($request->all());
         return redirect()->route('products.index');
     }
@@ -76,7 +83,14 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::with('photos')->find($id);
+        // for($i=0; $i<count($product->photos); $i++){
+        //     // dd($product->photos[$i]->logo);
+        // }
+        // dd($product->photos);
+        return view('products.show',[
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -87,7 +101,11 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::where('id',$id)->first();
+
+        return view('products.edit',[
+            'product' => $product,
+        ]);
     }
 
     /**
@@ -97,9 +115,22 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'product_name' => 'required',
+            'special' => 'required'
+        ]);
+
+        $product = Product::find($id);
+
+        $product->update([
+            'product_name' => $request->product_name,
+            'special' => $request->special,
+        ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -110,7 +141,12 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->delete();
+
+        return redirect()->route('products.index');
+    
     }
 
 }

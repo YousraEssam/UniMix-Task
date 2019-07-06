@@ -18,7 +18,7 @@ class CreatePhotosTable extends Migration
             $table->string('photo_name',50);
             $table->boolean('logo');
             $table->bigInteger('product_id')->unsigned()->nullable();
-            $table->foreign('product_id')->references('id')->on('products')->delete();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

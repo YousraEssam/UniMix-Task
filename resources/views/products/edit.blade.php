@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<h1 style="text-align:center; color:brown; font-size:28px; font-weight:bold;"> New Product</h1>
+<h1 style="text-align:center; color:brown; font-size:28px; font-weight:bold;">Edit Product</h1>
 @stop
 
 @section('content')
