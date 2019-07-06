@@ -26,7 +26,7 @@
                     <td>{{ $info->prod_profile }}</td>
                     <td>{{ $info->prod_benefits }}</td>
                     <td>{{ $info->prod_applications }}</td>
-                    <td>{{ $info->product->product_name }}</td>
+                    <td>{{ $info->product['product_name'] }}</td>
                     <td>
                         <a href="{{route('information.show', [$info->id])}}" class="btn btn-success">View</a>
                         <a href="{{route('information.edit', [$info->id])}}" class="btn btn-success">Edit</a>

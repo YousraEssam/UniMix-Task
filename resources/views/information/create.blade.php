@@ -25,9 +25,9 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">Product Profile</label>
+            <label class="col-md-4 control-label" for="product_profile">Product Profile</label>
             <div class="col-md-4">
-                <textarea id="product_name" name="product_name" placeholder="Product Profile"
+                <textarea id="product_profile" name="prod_profile" placeholder="Product Profile"
                     class="form-control input-md" required="" type="text"></textarea>
                 <small>Please Start Every Point with a ($).</small>
 
@@ -36,9 +36,9 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">Product Benefits</label>
+            <label class="col-md-4 control-label" for="product_benefits">Product Benefits</label>
             <div class="col-md-4">
-                <textarea id="product_name" name="product_name" placeholder="Product Benefits"
+                <textarea id="product_benefits" name="prod_benefits" placeholder="Product Benefits"
                     class="form-control input-md" required="" type="text"></textarea>
                 <small>Please Start Every Point with a ($).</small>
 
@@ -48,7 +48,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="product_name">Product Applications</label>
             <div class="col-md-4">
-                <textarea id="product_name" name="product_name" placeholder="Product Applications"
+                <textarea id="product_applications" name="prod_applications" placeholder="Product Applications"
                     class="form-control input-md" required="" type="text"></textarea>
                 <small>Please Start Every Point with a ($).</small>
 
@@ -57,12 +57,12 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">Related Product</label>
+            <label class="col-md-4 control-label" for="product_id">Related Product</label>
             <div class="col-md-4">
                 <select id="product_id" name="product_id" class="form-control">
 
-                    @foreach ($products as $product)
-                    <option value="{{$product->id}}">{{$product->product_name}}</option>
+                    @foreach($products as $product)
+                        <option value="{{$product->id}}"> {{$product->product_name}} </option>
                     @endforeach
 
                 </select>

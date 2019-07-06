@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Information extends Model
 {
     protected $fillable = [
-        'product_profile',
-        'product_benefits',
-        'product_applications',
+        'prod_profile',
+        'prod_benefits',
+        'prod_applications',
+        'product_id',
     ];
     
     public $timestamps = false;
