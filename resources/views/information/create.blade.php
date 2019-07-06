@@ -7,14 +7,25 @@
 @stop
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+<a href="{{route('information.index')}}" class="btn btn-danger">Back</a>
 
-<form class="form-horizontal" method="POST">
+<form class="form-horizontal" action="{{route('information.store')}}" method="POST">
+        @csrf
+
     <fieldset>
 
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="product_name">Product Profile</label>
-            {{-- <small>Please Start Every Point with a ($).</small> --}}
             <div class="col-md-4">
                 <textarea id="product_name" name="product_name" placeholder="Product Profile"
                     class="form-control input-md" required="" type="text"></textarea>
@@ -46,9 +57,14 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="product_name">Product Name</label>
+            <label class="col-md-4 control-label" for="product_name">Related Product</label>
             <div class="col-md-4">
-                <select id="product_name" name="product_name" class="form-control">
+                <select id="product_id" name="product_id" class="form-control">
+
+                    @foreach ($products as $product)
+                    <option value="{{$product->id}}">{{$product->product_name}}</option>
+                    @endforeach
+
                 </select>
             </div>
         </div>

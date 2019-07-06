@@ -50,7 +50,10 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $products = Product::all();
+        return view('products.create',[
+            'products' => $products,
+        ]);
     }
 
     /**
@@ -61,7 +64,8 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create($request->all());
+        return redirect()->route('products.index');
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Photo;
+use App\Product;
 
 class PhotosController extends Controller
 {
@@ -27,7 +28,13 @@ class PhotosController extends Controller
      */
     public function create()
     {
-        return view('photos.create');
+        $photos = Photo::all();
+        $products = Product::all();
+        
+        return view('photos.create',[
+            'photos' => $photos,
+            'products' => $products,
+        ]);
     }
 
     /**
@@ -38,7 +45,8 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Photo::create($request->all());
+        return redirect()->route('photos.index');
     }
 
     /**

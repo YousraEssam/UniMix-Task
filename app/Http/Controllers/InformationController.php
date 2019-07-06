@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Information;
+use App\Product;
 
 class InformationController extends Controller
 {
@@ -16,11 +17,8 @@ class InformationController extends Controller
     {
         $information = Information::with('product')->get();
 
-        // $profiles = Information::get_profiles();
-
         return view('information.index',[
             'information' => $information,
-            // 'profiles' => $profiles,
         ]);
     }
 
@@ -31,7 +29,13 @@ class InformationController extends Controller
      */
     public function create()
     {
-        return view('information.create');
+        $information = Information::all();
+        $products = Product::all();
+        
+        return view('information.create',[
+            'information' => $information,
+            'products' => $products,
+        ]);
     }
 
     /**
@@ -42,7 +46,8 @@ class InformationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Information::create($request->all());
+        return redirect()->route('information.index');
     }
 
     /**

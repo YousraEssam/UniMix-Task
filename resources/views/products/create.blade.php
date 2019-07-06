@@ -7,8 +7,19 @@
 @stop
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+<a href="{{route('products.index')}}" class="btn btn-danger">Back</a>
 
-<form class="form-horizontal" method="POST">
+<form class="form-horizontal" action="{{route('products.store')}}" method="POST">
+        @csrf
     <fieldset>
 
         <!-- Text input-->
@@ -25,7 +36,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="product_name">Is Special?</label>
             <div class="col-md-4">
-                <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md"
+                <input id="special" name="special" placeholder="PRODUCT NAME" class="form-control input-md"
                     required="" type="text">
 
             </div>

@@ -11,7 +11,7 @@
 
                 </div>
                 <div class="pull-left info">
-                    <p>{{Auth::User()->name}}</p>
+                    {{-- <p>{{Auth::User()->name}}</p> --}}
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>

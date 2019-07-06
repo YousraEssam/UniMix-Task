@@ -7,15 +7,27 @@
 @stop
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+<a href="{{route('photos.index')}}" class="btn btn-danger">Back</a>
 
-<form class="form-horizontal" method="POST">
+<form class="form-horizontal" action="{{route('photos.store')}}" method="POST">
+        @csrf
+
     <fieldset>
 
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="photo_name">Photo Name</label>
             <div class="col-md-4">
-                <input id="photo_name" name="photo_name" placeholder="photo NAME" class="form-control input-md"
+                <input id="photo_name" name="photo_name" placeholder="Photo Name" class="form-control input-md"
                     required="" type="text">
 
             </div>
@@ -25,9 +37,23 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="photo_name">Is Logo?</label>
             <div class="col-md-4">
-                <input id="photo_name" name="photo_name" placeholder="photo NAME" class="form-control input-md"
-                    required="" type="text">
+                <input id="logo" name="logo" placeholder="Is it a logo?" class="form-control input-md" required=""
+                    type="text">
 
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="product_name">Related Product</label>
+            <div class="col-md-4">
+                <select id="product_id" name="product_id" class="form-control">
+
+                    @foreach ($products as $product)
+                        <option value="{{$product->id}}">{{$product->product_name}}</option>
+                    @endforeach
+
+                </select>
             </div>
         </div>
 
